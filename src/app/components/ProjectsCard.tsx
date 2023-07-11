@@ -1,18 +1,26 @@
 import React from 'react';
+import Image from 'next/image';
+import { FaGithub } from 'react-icons/fa';
 
-const ProjectCard: React.FC<{project: {name: string, description: string, url: string, preview: string, codeSnippet: string}}> = ({project}) => (
-  <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-3">
-    <div className="md:flex">
-      <div className="md:flex-shrink-0">
-        <img className="h-48 w-full object-cover md:w-48" src={project.preview} alt={project.name} />
+const ProjectCard: React.FC<{project: {name: string, description: string, url: string, image: any, preview: string, codeSnippet: string}}> = ({project}) => (
+  <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md md:max-w-2xl m-3 dark:bg-gray-800">
+    <div className="md:flex p-6 items-center">
+      <div className="md:flex-shrink-0 flex items-center justify-center">
+        <Image className="h-48 w-full object-cover md:w-48" src={project.image} alt={project.name} width={500} height={300} />
       </div>
-      <div className="p-8">
-        <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{project.name}</div>
-        <a href={project.url} className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{project.description}</a>
-        <p className="mt-2 text-gray-500">Key code snippet:</p>
-        <pre className="p-2 bg-gray-200 rounded">
-          <code>{project.codeSnippet}</code>
-        </pre>
+      <div className="p-6 text-gray-800 dark:text-gray-200 flex flex-col justify-center items-start flex-grow">
+        <div className="block mt-1 text-lg leading-tight font-medium text-teal-500">
+          <div className="uppercase tracking-wide text-sm font-semibold">{project.name}</div>
+        </div>
+        <p className="mt-2 text-base leading-loose text-zinc-600 dark:text-zinc-400 animate__animated animate__slideInLeft">{project.description}</p>
+        <div className="mt-4">
+          <a href={project.url} className="text-teal-500 hover:underline dark:text-teal-500">
+            <FaGithub /> GitHub
+          </a>
+          <a href={project.preview} className="ml-4 text-teal-500 hover:underline dark:text-teal-500">
+            Preview
+          </a>
+        </div>
       </div>
     </div>
   </div>
