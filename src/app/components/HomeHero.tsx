@@ -17,7 +17,7 @@ const HomeContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-800">
+    <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 text-gray-900 bg-white dark:text-gray-200 dark:bg-gray-800">
       <Header />
       {!loaded ? (
         <div className="flex items-center justify-center min-h-screen">
