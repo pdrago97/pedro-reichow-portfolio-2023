@@ -78,7 +78,7 @@ const ServiceSteps: React.FC = () => {
           infiniteLoop
           centerMode
           centerSlidePercentage={centerSlidePercentage}
-          autoPlay={true} 
+          autoPlay={false} 
         >
           {services.map((service, index) => (
             <div key={index} className="flex flex-col items-center justify-center my-8 mx-8 p-4 bg-white dark:bg-gray-900 shadow rounded-lg animate__animated animate__slideInLeft">
