@@ -25,21 +25,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-.carousel-container .carousel .slide {
-  width: 50%; /* adjust this value to change the size of the cards */
-}
-
-.carousel-container .control-arrow {
-  opacity: 1; /* make the navigation buttons visible */
-}
-.carousel-container {
-  max-width: 800px; /* adjust the maximum width to fit your desired size */
-  margin: 0 auto;
-}
-
-.carousel .control-arrow {
-  font-size: 1.5rem;
-  height: 3rem;
-  width: 3rem;
-  transform: translateY(+350%);
-}
