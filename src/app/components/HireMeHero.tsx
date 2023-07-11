@@ -17,7 +17,7 @@ const HireMeHero: React.FC = () => (
         <p className="text-base mb-8 leading-loose text-zinc-600 dark:text-zinc-400 animate__animated animate__slideInLeft">
           I'm currently open for new opportunities and would love to hear about your ideas and projects. Whether you're looking for a dedicated developer or just want to discuss potential collaborations, feel free to reach out to me via email or WhatsApp. Let's create something amazing together!
         </p>
-        <div className="flex space-x-4 mt-2 justify-center">
+        <div className="flex space-x-4 mt-2 justify-center mb-12">
           <a href="mailto:pedroreichow3@gmail.com" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">Email Me</a>
           <a href="https://wa.link/2twxai" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 animate__animated animate__slideInLeft">WhatsApp</a>
         </div>

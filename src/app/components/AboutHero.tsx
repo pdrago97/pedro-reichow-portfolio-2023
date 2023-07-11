@@ -4,7 +4,7 @@ import HomeSocialIcons from './HomeSocialIcons';
 import bridge from '../assets/bridge.jpeg';
 import love from '../assets/love.jpg';
 import museum from '../assets/museum.jpg';
-import Header from '../components/Header'
+import Header from '../components/Header';
 
 import 'animate.css'; // import animate.css
 
@@ -32,18 +32,20 @@ const HomeContent: React.FC = () => (
           <Image src={love} alt="Photo 3" className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110 animate__animated animate__slideInLeft" />
         </div>
       </div>
-        <div className="mt-36 mr-96">
-
-          <p className="mx-4 sm:mx-20 text-base leading-loose text-zinc-600 dark:text-zinc-400 animate__animated animate__slideInLeft">
+      <div className="mt-8 mx-4 sm:mx-auto text-center">
+        <p className="text-base leading-loose text-zinc-600 dark:text-zinc-400 animate__animated animate__slideInLeft">
           Describing oneself can be a challenge, but in my personal life, I strive to embody qualities such as reserve, discipline, and a strong commitment to maintaining good health. Living in the beautiful surroundings of Florianópolis Island, I find solace in nature and frequently embark on travels to broaden my horizons. Above all, I hold my family in the highest regard and prioritize their well-being. Additionally, I am fortunate to be engaged and share a loving home with my partner, fostering a sense of harmony and joy in our lives.
-          </p>
-
-        </div>
-          <h2 className="mt-4 text-xl font-bold text-zinc-800 dark:text-zinc-100 animate__animated animate__slideInLeft">Download my resume!</h2>
-          <div className="flex space-x-4 mt-2">
-            <a href="../assets/curriculum/curriculumPedroReichowPt.pdf" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">Português</a>
-            <a href="../assets/curriculum/curriculumPedroReichowEn" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">English</a>
-          </div>
+        </p>
+      </div>
+      <h2 className="mt-4 text-xl font-bold text-zinc-800 dark:text-zinc-100 animate__animated animate__slideInLeft">Download my resume!</h2>
+      <div className="flex space-x-4 mt-2">
+        <a href="/curriculum/curriculumPedroReichowPt.pdf" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">
+          Portuguese
+        </a>
+        <a href="/curriculum/curriculumPedroReichowEn.pdf" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">
+          English
+        </a>
+      </div>
     </div>
   </div>
 );

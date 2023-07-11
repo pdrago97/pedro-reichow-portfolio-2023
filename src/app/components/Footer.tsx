@@ -15,10 +15,10 @@ const Footer: React.FC = () => (
       <div className="mx-auto max-w-2xl lg:max-w-5xl">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex gap-6 text-sm font-medium text-gray-800 dark:text-gray-200">
-            <NavItem href="/about" label="About" />
+            <NavItem href="/About" label="About" />
             <NavItem href="/Experiences" label="Experiences" />
-            <NavItem href="/projects" label="Projects" />
-            <NavItem href="/hire-me" label="Hire me" />
+            <NavItem href="/Projects" label="Projects" />
+            <NavItem href="/hireMe" label="Hire me" />
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400">© 2023 Pedro Reichow. All rights reserved.</p>
         </div>
