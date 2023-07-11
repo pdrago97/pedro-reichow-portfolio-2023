@@ -63,44 +63,38 @@ const services = [
 ];
   
 const ServiceSteps: React.FC = () => {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen">
-          <h2 className="text-3xl font-bold text-center mb-4">Efficient Software Engineering Services</h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
-            As a software engineer, I follow a meticulous approach to address your software needs effectively. The following steps outline the process:
-          </p>
-        <div className="carousel-container">
-          <Carousel showThumbs={false} showStatus={false} infiniteLoop>
-            {services.map((service, index) => (
-              <div key={index} className="flex flex-col md:flex-row items-center justify-between my-8 mx-8 p-4 bg-white dark:bg-gray-900 shadow rounded-lg animate__animated animate__slideInLeft">
-                {index % 2 === 0 ? (
-                  <>
-                    <div className="md:w-1/2 p-4">
-                      <h2 className="text-4xl mb-12 mb-8 font-bold text-gray-900 dark:text-gray-200 mb-2">{service.title}</h2>
-                      <p className="text-base text-gray-600 dark:text-gray-400">{service.description}</p>
-                    </div>
-                    <div className="md:w-1/2">
-                      <Lottie animationData={service.animation} />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="md:w-1/2">
-                      <Lottie animationData={service.animation} />
-                    </div>
-                    <div className="md:w-1/2 p-4">
-                      <h2 className="text-4xl mb-12 font-bold text-gray-900 dark:text-gray-200 mb-2">{service.title}</h2>
-                      <p className="text-base text-gray-600 dark:text-gray-400">{service.description}</p>
-                    </div>
-                  </>
-                )}
+  const centerSlidePercentage = 50; // Adjust this value to center the selected card
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h2 className="text-3xl font-bold text-center mb-4">Efficient Software Engineering Services</h2>
+      <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
+        As a software engineer, I follow a meticulous approach to address your software needs effectively. The following steps outline the process:
+      </p>
+      <div className="carousel-container">
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          infiniteLoop
+          centerMode
+          centerSlidePercentage={centerSlidePercentage}
+          autoPlay={true} 
+        >
+          {services.map((service, index) => (
+            <div key={index} className="flex flex-col items-center justify-center my-8 mx-8 p-4 bg-white dark:bg-gray-900 shadow rounded-lg animate__animated animate__slideInLeft">
+              <div className="p-4">
+                <h2 className="text-4xl mb-8 font-bold text-gray-900 dark:text-gray-200 mb-2">{service.title}</h2>
+                <p className="text-base text-gray-600 dark:text-gray-400">{service.description}</p>
               </div>
-            ))}
-          </Carousel>
-        </div>
+              <div>
+                <Lottie animationData={service.animation} />
+              </div>
+            </div>
+          ))}
+        </Carousel>
       </div>
-    );
-  };
-  
-  export default ServiceSteps;
-  
+    </div>
+  );
+};
+
+export default ServiceSteps;
