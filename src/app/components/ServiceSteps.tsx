@@ -3,6 +3,7 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import { Carousel } from 'react-responsive-carousel';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import one from '../assets/animations/1.json';
 import two from '../assets/animations/2.json';
@@ -65,19 +66,38 @@ const services = [
 const ServiceSteps: React.FC = () => {
   const centerSlidePercentage = 50; // Adjust this value to center the selected card
 
+  const renderArrowPrev = (onClickHandler: () => void, hasPrev: boolean, label: string) => {
+    return hasPrev && (
+      <button type="button" onClick={onClickHandler} title={label} style={{left: '11rem'}} className="absolute top-1/2 left-0 z-20 p-4 transform -translate-y-1/2">
+        <FaArrowLeft size={24} />
+      </button>
+    );
+  };
+  
+  const renderArrowNext = (onClickHandler: () => void, hasNext: boolean, label: string) => {
+    return hasNext && (
+      <button type="button" onClick={onClickHandler} title={label} style={{right: '11rem'}} className="absolute top-1/2 right-0 z-20 p-4 transform -translate-y-1/2">
+        <FaArrowRight size={24} />
+      </button>
+    );
+  };
+
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen overflow-visible">
       <h2 className="text-3xl font-bold text-center mb-4">Efficient Software Engineering Services</h2>
       <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
       As a dedicated software engineer, my approach is rooted in meticulous planning and execution to effectively meet your software requirements. The process I follow is outlined in the subsequent steps      </p>
-      <div className="carousel-container max-w-full overflow-x-auto">
+      <div className="carousel-container max-w-full overflow-x-auto overflow-visible">
         <Carousel
           showThumbs={false}
           showStatus={false}
           infiniteLoop
           centerMode
-          centerSlidePercentage={centerSlidePercentage}
           autoPlay={false} 
+          centerSlidePercentage={centerSlidePercentage}
+          renderArrowPrev={renderArrowPrev}
+          renderArrowNext={renderArrowNext}
         >
           {services.map((service, index) => (
             <div key={index} className="flex flex-col items-center justify-center my-8 mx-2 sm:mx-8 p-4 bg-white dark:bg-gray-900 shadow rounded-lg animate__animated animate__slideInLeft">
@@ -85,7 +105,7 @@ const ServiceSteps: React.FC = () => {
                 <h2 className="text-4xl mb-8 font-bold text-gray-900 dark:text-gray-200 mb-2">{service.title}</h2>
                 <p className="text-base text-gray-600 dark:text-gray-400">{service.description}</p>
               </div>
-              <div>
+              <div className="w-full sm:w-auto">
                 <Lottie animationData={service.animation} />
               </div>
             </div>
