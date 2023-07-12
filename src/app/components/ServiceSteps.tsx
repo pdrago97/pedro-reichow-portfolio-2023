@@ -67,45 +67,65 @@ const ServiceSteps: React.FC = () => {
   const centerSlidePercentage = 50; // Adjust this value to center the selected card
 
   const renderArrowPrev = (onClickHandler: () => void, hasPrev: boolean, label: string) => {
-    return hasPrev && (
-      <button type="button" onClick={onClickHandler} title={label} style={{left: '11rem'}} className="absolute top-1/2 left-0 z-20 p-4 transform -translate-y-1/2">
+    return hasPrev && window.innerWidth >= 1000 ? (
+      <button
+        type="button"
+        onClick={onClickHandler}
+        title={label}
+        style={{ left: '11rem' }}
+        className="absolute top-1/2 left-0 z-20 p-4 transform -translate-y-1/2"
+      >
         <FaArrowLeft size={24} />
       </button>
-    );
+    ) : null;
   };
-  
+
   const renderArrowNext = (onClickHandler: () => void, hasNext: boolean, label: string) => {
-    return hasNext && (
-      <button type="button" onClick={onClickHandler} title={label} style={{right: '11rem'}} className="absolute top-1/2 right-0 z-20 p-4 transform -translate-y-1/2">
+    return hasNext && window.innerWidth >= 1000 ? (
+      <button
+        type="button"
+        onClick={onClickHandler}
+        title={label}
+        style={{ right: '11rem' }}
+        className="absolute top-1/2 right-0 z-20 p-4 transform -translate-y-1/2"
+      >
         <FaArrowRight size={24} />
       </button>
-    );
+    ) : null;
   };
 
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen overflow-visible">
-      <h2 className="text-3xl font-bold text-center mb-4">Efficient Software Engineering Services</h2>
-      <p className="text-lg text-gray-700 dark:text-gray-300 text-center">
-      As a dedicated software engineer, my approach is rooted in meticulous planning and execution to effectively meet your software requirements. The process I follow is outlined in the subsequent steps      </p>
-      <div className="carousel-container max-w-full overflow-x-auto overflow-visible">
+    <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <h2 className="text-3xl font-bold text-center mb-4 md:text-xl p-4">Efficient Software Engineering Services</h2>
+      <p className="text-lg text-gray-700 dark:text-gray-300 text-center p-4">
+        As a dedicated software engineer, my approach is rooted in meticulous planning and execution to effectively meet your software requirements. The process I follow is outlined in the subsequent steps.
+      </p>
+      <div className="carousel-container w-full max-w-screen-lg mx-auto">
         <Carousel
           showThumbs={false}
           showStatus={false}
           infiniteLoop
           centerMode
-          autoPlay={false} 
+          autoPlay={false}
           centerSlidePercentage={centerSlidePercentage}
           renderArrowPrev={renderArrowPrev}
           renderArrowNext={renderArrowNext}
+          selectedItem={services.length / 2} // Ensure the initial selected item is in the center
         >
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-center justify-center my-8 mx-2 sm:mx-8 p-4 bg-white dark:bg-gray-900 shadow rounded-lg animate__animated animate__slideInLeft">
-              <div className="p-4">
-                <h2 className="text-4xl mb-8 font-bold text-gray-900 dark:text-gray-200 mb-2">{service.title}</h2>
-                <p className="text-base text-gray-600 dark:text-gray-400">{service.description}</p>
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center my-8 mx-4 p-4 bg-white dark:bg-gray-900 shadow rounded-lg animate__animated animate__slideInLeft"
+            >
+              <div className="p-4 min-w-full md:min-w-0">
+                <h2 className="lg:text-4xl text-base md:text-2xl lg:text-3xl xl:text-4xl mb-8 font-bold text-gray-900 dark:text-gray-200 mb-2 px-8">
+                  {service.title}
+                </h2>
+                <p className="text-base text-gray-600 dark:text-gray-400 p-8">
+                  {service.description}
+                </p>
               </div>
-              <div className="w-full sm:w-auto">
+              <div className="w-full">
                 <Lottie animationData={service.animation} />
               </div>
             </div>
