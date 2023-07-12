@@ -5,8 +5,8 @@ import Header from '../components/Header'
 import 'animate.css';
 
 const HireMeHero: React.FC = () => (
-  <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-800">
-    <Header />
+  <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 text-gray-900 bg-white dark:text-gray-200 dark:bg-gray-800">
+  <Header />
     <div className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-20">
       <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mb-4 animate__animated animate__slideInLeft text-center">
         Pedro Reichow: Software Engineer, Fullstack Developer, DevOps and Tech Enthusiast.

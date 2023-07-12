@@ -44,7 +44,7 @@ const ProjectsContent: React.FC = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-800">
+    <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-800 text-gray-900">
       <Header />
       <div className="flex flex-wrap justify-center">
         {projects.map((project, index) => (

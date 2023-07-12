@@ -9,7 +9,7 @@ import Header from '../components/Header';
 import 'animate.css'; // import animate.css
 
 const HomeContent: React.FC = () => (
-  <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-800">
+  <div className="mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-800 text-gray-900">
     <Header />
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl mx-4 sm:mx-20 font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mb-4 animate__animated animate__slideInLeft">
