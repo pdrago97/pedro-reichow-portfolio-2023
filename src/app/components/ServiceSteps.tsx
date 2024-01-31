@@ -67,27 +67,27 @@ const ServiceSteps: React.FC = () => {
   const centerSlidePercentage = 50; // Adjust this value to center the selected card
 
   const renderArrowPrev = (onClickHandler: () => void, hasPrev: boolean, label: string) => {
-    return hasPrev && window.innerWidth >= 1000 ? (
+    return hasPrev ? (
       <button
         type="button"
         onClick={onClickHandler}
         title={label}
         style={{ left: '11rem' }}
-        className="absolute top-1/2 left-0 z-20 p-4 transform -translate-y-1/2"
+        className="absolute top-1/2 left-0 z-20 p-4 transform -translate-y-1/2 text-black dark:text-white"
       >
         <FaArrowLeft size={24} />
       </button>
     ) : null;
   };
-
+  
   const renderArrowNext = (onClickHandler: () => void, hasNext: boolean, label: string) => {
-    return hasNext && window.innerWidth >= 1000 ? (
+    return hasNext ? (
       <button
         type="button"
         onClick={onClickHandler}
         title={label}
         style={{ right: '11rem' }}
-        className="absolute top-1/2 right-0 z-20 p-4 transform -translate-y-1/2"
+        className="absolute top-1/2 right-0 z-20 p-4 transform -translate-y-1/2 text-black dark:text-white"
       >
         <FaArrowRight size={24} />
       </button>
