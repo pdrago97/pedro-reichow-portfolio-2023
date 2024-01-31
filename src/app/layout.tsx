@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Pedro Reichow's Portfolio",
-  description: 'Portfolio of 2023 made with Next.js',
+  description: 'Portfolio of 2024',
   icon: '/favicon.ico',
 }
 

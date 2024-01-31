@@ -4,6 +4,8 @@ import Image from 'next/image';
 import meImage from '../assets/me.jpg';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import 'animate.css';
+import { useTheme } from '../context/themeProvider';
+
 
 type NavItemProps = {
   href: string;
@@ -15,21 +17,25 @@ const NavItem: React.FC<NavItemProps> = ({ href, label }) => (
 );
 
 const DarkModeSwitch: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  // Initialize dark mode value from localStorage or system preference
+  const { isDarkMode, setIsDarkMode } = useTheme();
+  const [visible, setVisible] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(false);
 
+  // Apply the dark mode class on mount and when isDarkMode changes
   useEffect(() => {
-    const darkMode = localStorage.getItem('darkMode');
-    setIsDarkMode(darkMode === 'true');
-  }, []);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem('darkMode', String(!isDarkMode));
-    if (!isDarkMode) {
+    if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+  }, [isDarkMode]);
+
+  // Function to toggle dark mode and store preference
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('darkMode', JSON.stringify(!isDarkMode));
   };
 
   return (
