@@ -178,7 +178,7 @@ const experiences = [
       <div className="mt-[-100px] pt-[100px] p-10 mx-auto max-w-screen-md sm:max-w-screen-sm lg:max-w-screen-xl border-l border-r border-gray-200 dark:border-gray-700 dark:text-gray-200 dark:bg-gray-900 text-gray-900">
       <Header/>
         {experiences.map((experience, index) => (
-          <div key={index} className="mx-16 mt-12 bg-white dark:bg-gray-800 shadow overflow-hidden sm:rounded-lg mb-4 animate__animated animate__slideInLeft">
+          <div key={index} className="mt-[+150px] mx-16 mt-12 bg-white dark:bg-gray-800 shadow overflow-hidden sm:rounded-lg mb-4 animate__animated animate__slideInLeft">
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-200">
                 {experience.title}

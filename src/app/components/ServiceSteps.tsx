@@ -96,10 +96,12 @@ const ServiceSteps: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
-      <h2 className="text-3xl font-bold text-center  mb-4 md:text-xl text-black p-4 dark:text-white">Efficient Software Engineering Services</h2>
-      <p className="text-lg text-gray-700 dark:text-gray-300 text-center p-4">
-        As a dedicated software engineer, my approach is rooted in meticulous planning and execution to effectively meet your software requirements. The process I follow is outlined in the subsequent steps.
-      </p>
+              <h1 className="text-5xl font-bold leading-tight mb-4 dark:text-white text-gray-900">
+                Crafting Digital Excellence
+              </h1>
+              <p className="text-xl mb-6 dark:text-gray-300 text-gray-700">
+                Delivering tailored software solutions with a commitment to quality, innovation, and seamless user experiences.
+              </p>
       <div className="carousel-container w-full max-w-screen-lg mx-auto">
         <Carousel
           showThumbs={false}

@@ -42,25 +42,64 @@ const DarkModeSwitch: React.FC = () => {
   );
 };
 
-const Header: React.FC = () => (
-  <header className="grid grid-cols-3 md:grid-cols-3 items-center justify-items-center gap-2 pt-12 mx-auto w-full animate__animated animate__slideInDown">
-    <div className="flex justify-start">
-      <a href="/" className="relative w-12 h-12 inline-block">
-        <Image src={meImage} alt="My Portfolio" layout="fill" className="rounded-full" />
-      </a>
-    </div>
-    <nav className="bg-slate-400 text-white dark:text-gray-200 py-2 px-4 rounded-full">
-      <div className="flex space-x-4 justify-center">
-        <NavItem href="/About" label="About"/>
-        <NavItem href="/Experiences" label="Experiences"/>
-        <NavItem href="/Projects" label="Projects"/>
-        <NavItem href="/HireMe" label="Hire Me!"/>
+const Header: React.FC<{}> = () => {
+  const [visible, setVisible] = useState(true);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop){
+        // Downscroll
+        setScrollingUp(false);
+      } else {
+        // Upscroll
+        setScrollingUp(true);
+      }
+      setVisible(scrollingUp);
+      setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollTop, scrollingUp]);
+
+  useEffect(() => {
+    // Delay the hiding of the header to ensure the scroll up has finished
+    const delayHide = setTimeout(() => {
+      if (!scrollingUp) {
+        setVisible(false);
+      }
+    }, 100);
+
+    return () => clearTimeout(delayHide);
+  }, [scrollingUp]);
+
+  
+  return (
+    <header className={`fixed left-0 w-full z-30 transition transform ease-in-out duration-150 grid grid-cols-3 items-center justify-items-center gap-2 pt-12 mx-auto w-full animate__animated ${visible ? 'animate__slideInDown' : 'animate__slideOutUp'}` }>
+      <div className="flex justify-start">
+        <a href="/" className="relative w-12 h-12 inline-block">
+          <Image src={meImage} alt="My Portfolio" layout="fill" className="rounded-full" />
+        </a>
       </div>
-    </nav>
-    <div className="flex justify-end">
-      <DarkModeSwitch />
-    </div>
-  </header>
-);
+      <nav className="bg-slate-400 text-white dark:text-gray-200 py-2 px-4 rounded-full">
+        <div className="flex space-x-4 justify-center">
+          <NavItem href="/About" label="About"/>
+          <NavItem href="/Experiences" label="Experiences"/>
+          <NavItem href="/Projects" label="Projects"/>
+          <NavItem href="/HireMe" label="Hire Me!"/>
+        </div>
+      </nav>
+      <div className="flex justify-end">
+        <DarkModeSwitch />
+      </div>
+    </header>
+  );
+}
 
 export default Header;

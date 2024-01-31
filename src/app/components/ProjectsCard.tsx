@@ -2,8 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
 
-const ProjectCard: React.FC<{project: {name: string, description: string, url: string, image: any, preview: string, codeSnippet: string}}> = ({project}) => (
-  <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md md:max-w-2xl m-3 dark:bg-gray-900">
+const ProjectCard: React.FC<{
+  project: {
+    name: string,
+    description: string,
+    url: string,
+    image: any,
+    preview: string,
+    codeSnippet: string
+  },
+  isFirst: boolean
+}> = ({ project, isFirst }) => (
+  <div className={`max-w-2xl mx-auto bg-white rounded-xl shadow-md md:max-w-2xl m-3 dark:bg-gray-900 ${isFirst ? 'mt-[150px]' : 'mt-3'}`}>
     <div className="md:flex p-6 items-center">
       <div className="md:flex-shrink-0 flex items-center justify-center">
         <Image className="h-48 w-full object-cover md:w-48" src={project.image} alt={project.name} width={500} height={300} />
