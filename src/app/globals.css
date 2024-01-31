@@ -43,3 +43,15 @@ body {
   width: 3rem;
   transform: translateY(+350%);
 }
+/* 
+.carousel .control-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel .control-arrow:active {
+  background-color: rgba(0, 0, 0, 0.2);
+} */
+
+* {
+  @apply transition-colors duration-200
+}

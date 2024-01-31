@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import meImage from '../assets/me.jpg';
 import { FaSun, FaMoon } from 'react-icons/fa';
-import 'animate.css'; // import animate.css
+import 'animate.css';
 
 type NavItemProps = {
   href: string;
@@ -43,22 +43,21 @@ const DarkModeSwitch: React.FC = () => {
 };
 
 const Header: React.FC = () => (
-  <header className="grid grid-cols-1 md:grid-cols-3 items-center justify-items-center gap-0 pt-8 mx-auto w-full animate__animated animate__slideInDown">
-    <div className="justify-self-center md:justify-self-end">
-      <a href="/" className="relative w-10 h-10 inline-block cursor-pointer overflow-hidden rounded-full">
-        <span className="block absolute top-0 left-0 w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900"></span>
-        <Image src={meImage} alt="My Portfolio" className="absolute z-10" width={40} height={40} />
+  <header className="grid grid-cols-3 md:grid-cols-3 items-center justify-items-center gap-2 pt-12 mx-auto w-full animate__animated animate__slideInDown">
+    <div className="flex justify-start">
+      <a href="/" className="relative w-12 h-12 inline-block">
+        <Image src={meImage} alt="My Portfolio" layout="fill" className="rounded-full" />
       </a>
     </div>
-    <div className="bg-slate-400 text-white dark:text-gray-200 py-2 px-8 rounded-full mt-4 md:mt-0">
-      <nav className="flex justify-center md:justify-end space-x-4">
+    <nav className="bg-slate-400 text-white dark:text-gray-200 py-2 px-4 rounded-full">
+      <div className="flex space-x-4 justify-center">
         <NavItem href="/About" label="About"/>
         <NavItem href="/Experiences" label="Experiences"/>
         <NavItem href="/Projects" label="Projects"/>
         <NavItem href="/HireMe" label="Hire Me!"/>
-      </nav>
-    </div>
-    <div className="justify-self-center md:justify-self-start mt-4 md:mt-0">
+      </div>
+    </nav>
+    <div className="flex justify-end">
       <DarkModeSwitch />
     </div>
   </header>

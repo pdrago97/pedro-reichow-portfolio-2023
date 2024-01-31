@@ -96,7 +96,7 @@ const ServiceSteps: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
-      <h2 className="text-3xl font-bold text-center mb-4 md:text-xl p-4">Efficient Software Engineering Services</h2>
+      <h2 className="text-3xl font-bold text-center  mb-4 md:text-xl text-black p-4 dark:text-white">Efficient Software Engineering Services</h2>
       <p className="text-lg text-gray-700 dark:text-gray-300 text-center p-4">
         As a dedicated software engineer, my approach is rooted in meticulous planning and execution to effectively meet your software requirements. The process I follow is outlined in the subsequent steps.
       </p>
@@ -110,7 +110,7 @@ const ServiceSteps: React.FC = () => {
           centerSlidePercentage={centerSlidePercentage}
           renderArrowPrev={renderArrowPrev}
           renderArrowNext={renderArrowNext}
-          selectedItem={services.length / 2} // Ensure the initial selected item is in the center
+          selectedItem={0}
         >
           {services.map((service, index) => (
             <div
