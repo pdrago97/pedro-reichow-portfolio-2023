@@ -25,7 +25,7 @@ const HomeContent: React.FC = () => {
       ) : (
         <>
           <section className="flex flex-col md:flex-row items-center min-h-full justify-center md:justify-between px-4 md:px-16 py-20 transition-colors duration-300 ease-in-out dark:bg-gray-900 bg-white">
-            <div className="md:w-1/2 text-center md:text-left">
+            <div className="md:w-1/2 text-center md:text-left mt-[+150px]">
               <h1 className="text-5xl font-bold leading-tight mb-4 dark:text-white text-gray-900">
                 Elevate Your Digital Presence
               </h1>

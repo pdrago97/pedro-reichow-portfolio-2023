@@ -19,9 +19,6 @@ const NavItem: React.FC<NavItemProps> = ({ href, label }) => (
 const DarkModeSwitch: React.FC = () => {
   // Initialize dark mode value from localStorage or system preference
   const { isDarkMode, setIsDarkMode } = useTheme();
-  const [visible, setVisible] = useState(true);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [scrollingUp, setScrollingUp] = useState(false);
 
   // Apply the dark mode class on mount and when isDarkMode changes
   useEffect(() => {
@@ -39,10 +36,10 @@ const DarkModeSwitch: React.FC = () => {
   };
 
   return (
-    <button onClick={toggleDarkMode} className="p-2 bg-gray-200 dark:bg-gray-600 rounded-full">
+    <button onClick={toggleDarkMode} className="p-2 bg-gray-600 dark:bg-gray-400 rounded-full">
       {isDarkMode ? 
-        <FaMoon className="w-6 h-6" /> : 
-        <FaSun className="w-6 h-6" />
+        <FaSun className="w-6 h-6" /> :
+        <FaMoon className="w-6 h-6" /> 
       }
     </button>
   );
@@ -87,9 +84,9 @@ const Header: React.FC<{}> = () => {
 
   
   return (
-    <header className={`fixed left-0 w-full z-30 transition transform ease-in-out duration-150 grid grid-cols-3 items-center justify-items-center gap-2 pt-12 mx-auto w-full animate__animated ${visible ? 'animate__slideInDown' : 'animate__slideOutUp'}` }>
+    <header className={`fixed left-0 w-full z-30 transition transform ease-in-out duration-150 grid sm-grid-col-1 grid-cols-3 items-center justify-items-center gap-2 pt-12 mx-auto w-full animate__animated ${visible ? 'animate__slideInDown' : 'animate__slideOutUp'}` }>
       <div className="flex justify-start">
-        <a href="/" className="relative w-12 h-12 inline-block">
+        <a href="/" className="block w-12 h-12 relative">
           <Image src={meImage} alt="My Portfolio" layout="fill" className="rounded-full" />
         </a>
       </div>
