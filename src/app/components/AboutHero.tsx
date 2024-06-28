@@ -39,9 +39,9 @@ const HomeContent: React.FC = () => (
       </div>
       <h2 className="mt-4 text-xl font-bold text-zinc-800 dark:text-zinc-100 animate__animated animate__slideInLeft">Download my resume!</h2>
       <div className="flex space-x-4 mt-2">
-        <a href="/curriculum/curriculumPedroReichowPt.pdf" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">
+        {/* <a href="/curriculum/curriculumPedroReichowPt.pdf" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">
           Portuguese
-        </a>
+        </a> */}
         <a href="/curriculum/curriculumPedroReichowEn.pdf" download className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 animate__animated animate__slideInLeft">
           English
         </a>
